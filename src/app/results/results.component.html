@@ -1,0 +1,14 @@
+<form (ngSubmit)="getInfo()" [formGroup]="displayResults">
+    <select formControlName="choose">
+        <option value="people" >People</option>
+        <option value="starships" >Starships</option>
+        <option value="films" >Films</option>
+    </select>
+    Search<input formControlName="search" type="text" name="search">
+    <br>
+    <button type="submit" value="Submit"> Submit </button>
+</form>
+
+<div *ngIf="results">
+    <p>{{results.results | json }}</p>
+</div> 
